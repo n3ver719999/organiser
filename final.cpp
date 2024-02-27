@@ -5,7 +5,7 @@
 using namespace std;
 
 void openTxt() {
-	std::string currentDir = filesystem::current_path().string();
+	string currentDir = filesystem::current_path().string();
 
 	for (const auto& entry : filesystem::directory_iterator(currentDir)) {
 		if (filesystem::is_regular_file(entry) && entry.path().extension() == ".txt") {
