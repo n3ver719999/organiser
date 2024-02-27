@@ -1,4 +1,4 @@
-﻿#include <iostream>
+#include <iostream>
 #include <fstream>
 #include <string>
 #include <filesystem>
@@ -25,7 +25,6 @@ void openTxt() {
 	}
 }
 
-
 void saveText() {
 	string filename;
 
@@ -44,11 +43,8 @@ void saveText() {
 			if (line == "000") {
 				break;
 			}
-
-
 			file << line << endl;
 		}
-
 		cout << "Текст сохранен в файле: " << filename << endl;
 		file.close();
 	}
@@ -59,14 +55,20 @@ void saveText() {
 
 
 int main() {
+	int a = 1;
 	setlocale(LC_ALL, "Russian");
 	while (true) {
 		cout << "---Organiser by n3ver---" << endl;
 		cout << "Список файлов органайзера:" << endl;
 		openTxt();
 		saveText();
+		cout << "Введите 0, чтобы выйти: ";
+		cin >> a;
+		cout << endl;
+		if (a == 0) {
+			cout << "Завершение программы..." << endl;
+			break;
+		}
 		system("cls");
 	}
-	
-	
 }
